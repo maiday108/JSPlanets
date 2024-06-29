@@ -10,14 +10,25 @@
 
 export function minBy(array, cb) {
   // Your code goes here...
-
+  let min = array[0];
+  for (let elem of array) {
+    if (cb(elem) < cb(min)) {
+      min = elem;
+    }
+  }
+  return min;
 }
 
 export function maxBy(array, cb) {
   // Your code goes here...
-
+  let max = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (cb(array[i]) > cb(max)) {
+      max = array[i];
+    }
+  }
+  return max;
 }
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-17"

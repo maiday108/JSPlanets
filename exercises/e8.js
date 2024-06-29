@@ -6,6 +6,14 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
+
+  return data.planets.find((planet) => {
+    if (planet.moons) {
+      if (planet.moons.find((moon) => moon == moonName)) {
+        return planet.name;
+      }
+    }
+  }).name;
 }
 
 

@@ -7,6 +7,12 @@ import { data } from "../data/data";
 
 export function lowMoonsPlanets(data) {
   // Your code goes here...
+  return data.planets.reduce((acc,planet) => {
+    if (planet.moonsCount < 10 || planet.moonsCount == undefined) {
+      acc.push(planet.name);
+    }
+    return acc;
+  }, [])
 }
 
 // === TEST YOURSELF ===
